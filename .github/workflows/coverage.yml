@@ -11,11 +11,11 @@ jobs:
 
       - name: Install deps
         run: npm install
-        working-directory: ./calculator
+        working-directory: .
 
       - name: Run tests
         run: npm test -- --coverage
-        working-directory: ./calculator
+        working-directory: .
 
       - name: Upload to Codecov
         uses: codecov/codecov-action@v4
