@@ -1,6 +1,8 @@
 name: Coverage
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 
 jobs:
   build:
@@ -9,15 +11,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
       - name: Install deps
-        run: npm install
+        run: npm ci
         working-directory: .
 
-      - name: Run tests
+      # ----------------------------
+      # ▶ Rodar testes com coverage
+      # ----------------------------
+      - name: Run Jest (unit + integration) with coverage
         run: npm test -- --coverage
         working-directory: .
 
+      # ----------------------------
+      # ▶ Rodar testes E2E (Playwright)
+      # ----------------------------
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Start static server
+        run: npx http-server ./ -p 3000 -s &
+      
+      - name: Run Playwright E2E
+        run: npx playwright test tests/e2e --reporter=list
+
+      # ----------------------------
+      # ▶ Upload para Codecov
+      # ----------------------------
       - name: Upload to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
