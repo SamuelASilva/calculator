@@ -3,15 +3,6 @@
     const display = document.getElementById('display');
     const buttons = Array.from(document.querySelectorAll('.buttons button'));
 
-    if (!display) {
-      console.error("Display não encontrado");
-      return;
-    }
-    if (!buttons.length) {
-      console.error("Nenhum botão encontrado");
-      return;
-    }
-
     let current = '';
     let left = null;
     let op = null;
@@ -25,6 +16,8 @@
       const operation = btn.dataset.op;
 
       btn.addEventListener('click', () => {
+
+        // números
         if (val !== undefined) {
           if (val === '.' && current.includes('.')) return;
           current = (current === '0') ? val : (current + val);
@@ -32,20 +25,25 @@
           return;
         }
 
+        // operadores
         if (operation) {
-          if (left === null && current === '') return;
+
+          if (current === '') return;
+
           if (left === null) {
             left = Number(current);
             current = '';
-          } else if (current !== '') {
-            left = window.Calculator.evaluate(left, op, current);
+          } else {
+            left = window.Calculator.evaluate(left, op, Number(current));
             current = '';
           }
+
           op = operation;
           refresh();
           return;
         }
 
+        // limpar
         if (btn.id === 'clear') {
           current = '';
           left = null;
@@ -54,10 +52,11 @@
           return;
         }
 
+        // igual
         if (btn.id === 'equals') {
           if (op && current !== '') {
             try {
-              left = window.Calculator.evaluate(left, op, current);
+              left = window.Calculator.evaluate(left, op, Number(current));
               current = '';
               op = null;
               refresh();
@@ -66,15 +65,13 @@
             }
           }
         }
+
       });
     });
 
     refresh();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  // força init imediatamente (JSDOM não dispara DOMContentLoaded)
+  init();
 })();
