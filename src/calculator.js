@@ -21,11 +21,18 @@
         }
     };
 
-
     // Export para Node (Jest) e para browser
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = Calculator;
-    } else {
-        root.Calculator = Calculator;
     }
-})(typeof window !== 'undefined' ? window : globalThis);
+
+    // Também expõe no objeto global (window / globalThis),
+    // assim ui.js que usa window.Calculator funciona em todos os ambientes.
+    try {
+        if (typeof root !== 'undefined' && root) {
+            root.Calculator = Calculator;
+        }
+    } catch (e) {
+        // sem problema — apenas evita crash em ambientes estranhos
+    }
+})(typeof window !== 'undefined' ? window : (typeof globalThis !== 'undefined' ? globalThis : this));
