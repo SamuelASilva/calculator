@@ -4,5 +4,9 @@ module.exports = {
     verbose: true,
     testEnvironmentOptions: {
         resources: 'usable'
-    }
+    },
+
+    collectCoverage: true,
+    collectCoverageFrom: ["src/**/*.js"],
+    coverageReporters: ["text", "lcov"]
 };
