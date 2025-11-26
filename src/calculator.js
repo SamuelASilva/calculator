@@ -10,7 +10,6 @@
         },
         pow(a, b) { return Math.pow(Number(a), Number(b)); },
 
-        // 🔥 ORDEM CORRIGIDA
         evaluate(op, a, b) {
             switch (op) {
                 case '+': return this.add(a, b);

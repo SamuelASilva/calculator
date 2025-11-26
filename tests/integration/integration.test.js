@@ -11,7 +11,7 @@ describe('Integration UI -> logic', () => {
     let container;
 
     beforeEach(() => {
-        // coloca HTML só no body — jsdom funciona melhor assim
+        // coloca HTML só no body
         document.body.innerHTML = html;
 
         // limpa módulos para garantir que ui.js reinicialize
