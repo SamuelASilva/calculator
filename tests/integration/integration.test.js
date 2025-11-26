@@ -11,13 +11,10 @@ describe('Integration UI -> logic', () => {
     let container;
 
     beforeEach(() => {
-        // coloca HTML só no body
         document.body.innerHTML = html;
 
-        // limpa módulos para garantir que ui.js reinicialize
         jest.resetModules();
 
-        // carrega scripts DEPOIS do HTML existir
         require('../../src/calculator');
         require('../../src/ui');
 

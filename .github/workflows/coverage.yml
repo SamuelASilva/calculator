@@ -19,15 +19,9 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # ----------------------------
-      # ▶ Rodar Jest com coverage
-      # ----------------------------
       - name: Run Jest unit tests with coverage
         run: npm run test:unit -- --coverage
 
-      # ----------------------------
-      # ▶ Rodar Playwright E2E
-      # ----------------------------
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
@@ -37,9 +31,9 @@ jobs:
       - name: Run Playwright E2E
         run: npx playwright test tests/e2e --reporter=list
 
-      # ----------------------------
-      # ▶ Enviar SOMENTE coverage do Jest
-      # ----------------------------
+      - name: Run Jest integration tests with coverage
+        run: npm run test:integration -- --coverage
+
       - name: Upload to Codecov
         uses: codecov/codecov-action@v4
         with:
