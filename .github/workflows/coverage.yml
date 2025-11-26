@@ -18,17 +18,15 @@ jobs:
 
       - name: Install deps
         run: npm ci
-        working-directory: .
 
       # ----------------------------
-      # ▶ Rodar testes com coverage
+      # ▶ Rodar Jest com coverage
       # ----------------------------
       - name: Run Jest (unit + integration) with coverage
         run: npm test -- --coverage
-        working-directory: .
 
       # ----------------------------
-      # ▶ Rodar testes E2E (Playwright)
+      # ▶ Rodar Playwright E2E
       # ----------------------------
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
@@ -40,10 +38,11 @@ jobs:
         run: npx playwright test tests/e2e --reporter=list
 
       # ----------------------------
-      # ▶ Upload para Codecov
+      # ▶ Enviar SOMENTE coverage do Jest
       # ----------------------------
       - name: Upload to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/lcov.info
           fail_ci_if_error: true
