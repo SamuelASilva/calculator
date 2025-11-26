@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/20</span>
+                <span class='fraction'>15/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.61% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/21</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,62 +98,62 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function (root) {
     const Calculator = {
         add(a, b) { return Number(a) + Number(b); },
-<span class="fstat-no" title="function not covered" >        su</span>b(a, b) { <span class="cstat-no" title="statement not covered" >return Number(a) - Number(b); </span>},
-<span class="fstat-no" title="function not covered" >        mu</span>l(a, b) { <span class="cstat-no" title="statement not covered" >return Number(a) * Number(b); </span>},
-<span class="fstat-no" title="function not covered" >        di</span>v(a, b) {
-            const denom = <span class="cstat-no" title="statement not covered" >Number(b);</span>
-<span class="cstat-no" title="statement not covered" >            if (denom === 0) <span class="cstat-no" title="statement not covered" >throw new Error('DivisionByZero');</span></span>
-<span class="cstat-no" title="statement not covered" >            return Number(a) / denom;</span>
+        sub(a, b) { return Number(a) - Number(b); },
+        mul(a, b) { return Number(a) * Number(b); },
+        div(a, b) {
+            const denom = Number(b);
+            if (denom === 0) throw new Error('DivisionByZero');
+            return Number(a) / denom;
         },
-<span class="fstat-no" title="function not covered" >        po</span>w(a, b) { <span class="cstat-no" title="statement not covered" >return Math.pow(Number(a), Number(b)); </span>},
+        pow(a, b) { return Math.pow(Number(a), Number(b)); },
 &nbsp;
         // 🔥 ORDEM CORRIGIDA
         evaluate(op, a, b) {
             switch (op) {
                 case '+': return this.add(a, b);
-<span class="branch-1 cbranch-no" title="branch not covered" >                case '-': <span class="cstat-no" title="statement not covered" >return this.sub(a, b);</span></span>
-<span class="branch-2 cbranch-no" title="branch not covered" >                case '*': <span class="cstat-no" title="statement not covered" >return this.mul(a, b);</span></span>
-<span class="branch-3 cbranch-no" title="branch not covered" >                case '/': <span class="cstat-no" title="statement not covered" >return this.div(a, b);</span></span>
-<span class="branch-4 cbranch-no" title="branch not covered" >                case '^': <span class="cstat-no" title="statement not covered" >return this.pow(a, b);</span></span>
-<span class="branch-5 cbranch-no" title="branch not covered" >                default: <span class="cstat-no" title="statement not covered" >throw new Error('UnknownOp:' + op);</span></span>
+                case '-': return this.sub(a, b);
+                case '*': return this.mul(a, b);
+                case '/': return this.div(a, b);
+                case '^': return this.pow(a, b);
+                default: throw new Error('UnknownOp:' + op);
             }
         }
     };
@@ -175,7 +175,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-26T18:42:35.183Z
+                at 2025-11-26T20:02:21.772Z
             </div>
         <script src="prettify.js"></script>
         <script>

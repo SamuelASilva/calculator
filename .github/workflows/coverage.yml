@@ -22,8 +22,8 @@ jobs:
       # ----------------------------
       # ▶ Rodar Jest com coverage
       # ----------------------------
-      - name: Run Jest (unit + integration) with coverage
-        run: npm test -- --coverage
+      - name: Run Jest unit tests with coverage
+        run: npm run test:unit -- --coverage
 
       # ----------------------------
       # ▶ Rodar Playwright E2E

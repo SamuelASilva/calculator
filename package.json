@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "test": "npm run test:unit && npm run test:integration",
+        "test": "npm run test:unit",
         "test:unit": "jest --config=jest.config.cjs --runInBand",
         "test:integration": "jest --config=jest.config.cjs tests/integration --runInBand",
         "test:e2e": "npx http-server ./ -p 3000 -s & npx playwright test tests/e2e --reporter=list",
