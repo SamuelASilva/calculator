@@ -9,7 +9,9 @@
             return Number(a) / denom;
         },
         pow(a, b) { return Math.pow(Number(a), Number(b)); },
-        evaluate(a, op, b) {
+
+        // 🔥 ORDEM CORRIGIDA
+        evaluate(op, a, b) {
             switch (op) {
                 case '+': return this.add(a, b);
                 case '-': return this.sub(a, b);
@@ -21,18 +23,13 @@
         }
     };
 
-    // Export para Node (Jest) e para browser
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = Calculator;
     }
 
-    // Também expõe no objeto global (window / globalThis),
-    // assim ui.js que usa window.Calculator funciona em todos os ambientes.
     try {
         if (typeof root !== 'undefined' && root) {
             root.Calculator = Calculator;
         }
-    } catch (e) {
-        // sem problema — apenas evita crash em ambientes estranhos
-    }
+    } catch (e) {}
 })(typeof window !== 'undefined' ? window : (typeof globalThis !== 'undefined' ? globalThis : this));

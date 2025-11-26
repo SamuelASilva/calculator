@@ -34,7 +34,7 @@
             left = Number(current);
             current = '';
           } else {
-            left = window.Calculator.evaluate(left, op, Number(current));
+            left = window.Calculator.evaluate(op, left, Number(current));
             current = '';
           }
 
@@ -56,7 +56,7 @@
         if (btn.id === 'equals') {
           if (op && current !== '') {
             try {
-              left = window.Calculator.evaluate(left, op, Number(current));
+              left = window.Calculator.evaluate(op, left, Number(current));
               current = '';
               op = null;
               refresh();
